@@ -4,6 +4,7 @@ import { Moon, Sun, Wallet } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useState } from "react";
+import { signOut } from "@/lib/auth";
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -117,6 +118,19 @@ export function Navbar() {
                 <span className="hidden sm:inline">Connect Wallet</span>
               </Button>
             )}
+
+            <Link href="/auth">
+              <a className="inline-block">
+                <div 
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover-elevate active-elevate-2 h-9 px-3 py-2 border"
+                >
+                  Sign In / Up
+                </div>
+              </a>
+            </Link>
+            <Button variant="ghost" onClick={() => { signOut(); }}>
+              Sign Out
+            </Button>
           </div>
         </div>
       </div>
