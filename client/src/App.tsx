@@ -16,6 +16,11 @@ import PosterOnboarding from "@/pages/PosterOnboarding";
 import Auth from "@/pages/Auth";
 import FreelancerDashboard from "@/pages/FreelancerDashboard";
 import PosterDashboard from "@/pages/PosterDashboard";
+import HowItWorks from "@/pages/HowItWorks";
+import ProfileEdit from "@/pages/ProfileEdit";
+import Messages from "@/pages/Messages";
+import Applications from "@/pages/Applications";
+import MyJobs from "@/pages/MyJobs";
 
 function Router() {
   return (
@@ -27,6 +32,11 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/dashboard/freelancer" component={FreelancerDashboard} />
       <Route path="/dashboard/poster" component={PosterDashboard} />
+      <Route path="/how-it-works" component={HowItWorks} />
+      <Route path="/profile/edit" component={ProfileEdit} />
+      <Route path="/messages" component={Messages} />
+      <Route path="/applications" component={Applications} />
+      <Route path="/my-jobs" component={MyJobs} />
       <Route path="/profile/:wallet?" component={Profile} />
       <Route path="/onboarding/freelancer" component={FreelancerOnboarding} />
       <Route path="/onboarding/poster" component={PosterOnboarding} />
