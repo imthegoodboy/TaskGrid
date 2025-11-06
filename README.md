@@ -42,3 +42,4 @@ Note: Email-to-role is enforced on the client using localStorage (one email cann
 - AI resume generation + AI job matching
 
 
+TaskGridEscrow deployed at: 0xE1517864005fae94974A56BEc337F4aA63f60867
