@@ -242,7 +242,7 @@ export default function Home() {
                     Get Started
                   </Button>
                 </Link>
-                <Link href="/dashboard">
+                <Link href="/how-it-works">
                   <Button size="lg" variant="outline" data-testid="button-learn-more">
                     Learn More
                   </Button>

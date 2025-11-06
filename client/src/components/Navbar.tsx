@@ -64,17 +64,17 @@ export function Navbar() {
                   </a>
                 </Link>
               )}
-              <Link href="/dashboard">
+              <Link href="/how-it-works">
                 <a className="inline-block">
                   <div 
                     className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover-elevate active-elevate-2 h-9 px-4 py-2 ${
-                      isActive("/dashboard")
+                      isActive("/how-it-works")
                         ? "bg-secondary text-secondary-foreground border border-secondary-border"
                         : "hover:bg-accent hover:text-accent-foreground border border-transparent"
                     }`}
-                    data-testid="link-dashboard"
+                    data-testid="link-how-it-works"
                   >
-                    Dashboard
+                    How It Works
                   </div>
                 </a>
               </Link>
