@@ -34,7 +34,7 @@ export default function PosterOnboarding() {
     localStorage.setItem("tg_email_role_map", JSON.stringify(emailRoleMap));
     localStorage.setItem("tg_role", "poster");
     localStorage.setItem("tg_poster_profile", JSON.stringify({ name, email, company, whatTheyDo, whatTheyWant }));
-    setLocation("/post-job");
+    setLocation("/dashboard/poster");
   };
 
   return (
