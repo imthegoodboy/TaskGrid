@@ -25,8 +25,7 @@
    - Freelancer → Find Work (browse, filter, view details, apply with personalized message)
    - Job Poster → Post Job (create job with category, budget, deadline, skills)
 4. Dashboard shows activity, active jobs, and mock stats
-
-Note: Email-to-role is enforced on the client using localStorage (one email cannot register both roles).
+ 
 
 ## Why it’s useful
 - Reduces platform fees; near-instant payments
