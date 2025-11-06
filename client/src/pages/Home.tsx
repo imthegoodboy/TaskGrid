@@ -72,12 +72,7 @@ export default function Home() {
 
   const chooseRole = (role: "freelancer" | "poster") => {
     localStorage.setItem("tg_role", role);
-    // If email-role map exists and conflicts, block (handled in onboarding)
-    if (role === "freelancer") {
-      setLocation("/onboarding/freelancer");
-    } else {
-      setLocation("/onboarding/poster");
-    }
+    setLocation("/auth");
   };
 
   return (
@@ -138,13 +133,13 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/onboarding/freelancer">
+              <Link href="/auth">
                 <Button size="lg" variant="default" className="gap-2 text-base" data-testid="button-start-freelancer">
                   Start as Freelancer
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/onboarding/poster">
+              <Link href="/auth">
                 <Button 
                   size="lg" 
                   variant="outline" 
