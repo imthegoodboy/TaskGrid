@@ -51,7 +51,7 @@ export default function FreelancerOnboarding() {
     localStorage.setItem("tg_email_role_map", JSON.stringify(emailRoleMap));
     localStorage.setItem("tg_role", "freelancer");
     localStorage.setItem("tg_freelancer_profile", JSON.stringify({ name, email, age, education, expectedSalary, skills, about, hasProfilePic: !!profilePic }));
-    setLocation("/find-work");
+    setLocation("/dashboard/freelancer");
   };
 
   return (
