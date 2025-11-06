@@ -11,6 +11,9 @@ import { Card } from "@/components/ui/card";
 import { Search, Filter, Sparkles } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import type { Job, User } from "@shared/schema";
+import { useEffect } from "react";
+import { useLocation } from "wouter";
+import { requireAuthRedirect } from "@/lib/auth";
 
 const categories = [
   "All Categories",
@@ -23,6 +26,8 @@ const categories = [
 ];
 
 export default function FindWork() {
+  const [, setLocation] = useLocation();
+  useEffect(() => { requireAuthRedirect(setLocation); }, []);
   const [searchQuery, setSearchQuery] = useState("");
   const [category, setCategory] = useState("All Categories");
   const [budgetRange, setBudgetRange] = useState([0, 10000]);
@@ -30,7 +35,7 @@ export default function FindWork() {
   const [verifiedClientsOnly, setVerifiedClientsOnly] = useState(false);
 
   const { data: jobs, isLoading } = useQuery<(Job & { client: User; _count: { applications: number } })[]>({
-    queryKey: ["/api/jobs", { category, search: searchQuery }],
+    queryKey: ["/api/jobs", { category: category === 'All Categories' ? undefined : category, search: searchQuery || undefined }],
   });
 
   const filteredJobs = jobs?.filter(job => {
