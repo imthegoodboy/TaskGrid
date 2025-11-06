@@ -1,16 +1,14 @@
-import type { IStorage as IStoragePg } from "./storage.postgres";
-import { DatabaseStorage } from "./storage.postgres";
-import type { IStorage as IStorageMongo } from "./storage.mongo";
-import { MongoStorage } from "./storage.mongo";
+export type IStorage = any;
 
-export type IStorage = IStoragePg & IStorageMongo;
+const kind = (process.env.STORAGE || "postgres").toLowerCase();
+let storageInstance: IStorage;
 
-function createStorage(): IStorage {
-  const kind = (process.env.STORAGE || "postgres").toLowerCase();
-  if (kind === "mongo" || kind === "mongodb") {
-    return new (MongoStorage as any)();
-  }
-  return new (DatabaseStorage as any)();
+if (kind === "mongo" || kind === "mongodb") {
+  const mod = await import("./storage.mongo.js");
+  storageInstance = new mod.MongoStorage();
+} else {
+  const mod = await import("./storage.postgres.js");
+  storageInstance = new mod.DatabaseStorage();
 }
 
-export const storage = createStorage();
+export const storage: IStorage = storageInstance;
